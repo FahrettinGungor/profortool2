@@ -1,0 +1,43 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    ul {
+        padding-left: 0px;
+        display: flex;
+        align-items: center;
+    }
+
+    li {
+        display: inline;
+        margin-left: 1rem;
+    }
+
+    a {
+        color: white;
+    }
+
+    a:link {
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+    
+    a:visited {
+    text-decoration: none;
+    }
+
+    a:hover {
+    text-decoration: underline;
+    }
+
+    a:active {
+    text-decoration: underline;
+    }
+
+    img {
+        height: 3rem;
+        width: 3rem;
+    }
+}
