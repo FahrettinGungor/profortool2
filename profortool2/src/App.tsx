@@ -1,16 +1,22 @@
-import Header from './Components/Header/Header'
+import routes from './Routes'
 
 import {
-    BrowserRouter as Router
-} from "react-router-dom";
+    BrowserRouter as Switch,
+    Route
+  } from "react-router-dom";
 
 const App = () => {
     return (
-        <div>
-            <Router>
-                <Header></Header>
-            </Router>
-        </div>
+        <Switch>
+            {routes.map(route => {
+                const Component = route.component;
+                return (
+                    <Route path={route.url} key={route.url}>
+                        <Component/>
+                    </Route>
+                )
+            })}
+        </Switch>
     )
 }
 

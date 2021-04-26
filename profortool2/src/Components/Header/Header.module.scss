@@ -1,43 +1,36 @@
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
+}
 
-    ul {
-        padding-left: 0px;
-        display: flex;
-        align-items: center;
-    }
+ul {
+    padding-left: 0px;
+    display: flex;
+    align-items: center;
+}
 
-    li {
-        display: inline;
-        margin-left: 1rem;
-    }
+li {
+    display: inline;
+    margin-left: 1rem;
+}
 
-    a {
-        color: white;
-    }
-
-    a:link {
-        font-size: 1.5rem;
-        text-decoration: none;
-    }
-    
-    a:visited {
+a {
+    color: black;
+    font-size: 1.5rem;
     text-decoration: none;
-    }
+}
 
-    a:hover {
+img {
+    height: 3rem;
+    width: 3rem;
+}
+
+a:hover {
     text-decoration: underline;
-    }
+}
 
-    a:active {
+.active {
     text-decoration: underline;
-    }
-
-    img {
-        height: 3rem;
-        width: 3rem;
-    }
+    font-weight: bold;
 }

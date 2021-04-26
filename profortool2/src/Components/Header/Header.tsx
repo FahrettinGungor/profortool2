@@ -7,9 +7,14 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import styles from './Header.module.scss';
 import logo from '../../Assets/Images/proforto-logo.png';
-import { Link } from "react-router-dom";
+import {NavLink} from 'react-router-dom';
+import { RouteItem } from '../../Routes';
 
-export default function Header() {
+interface HeaderProps {
+    listItems: RouteItem[]
+}
+
+export default function Header({listItems}: HeaderProps) {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
     const open = Boolean(anchorEl);
   
@@ -23,25 +28,23 @@ export default function Header() {
 
     return (
     <div>
-      <AppBar position="static">
+      <AppBar color="default" position="static">
         <Toolbar>
             <div className={styles.header}>
             <ul>
                 <li>
-                    <Link to="/">
+                    <NavLink exact={true} to="/">
                         <img alt="Proforto logo" src={logo}/>
-                    </Link>
+                    </NavLink>
                 </li>
-                <li>
-                    <Link to="/sales-orders">
-                        Sales orders
-                    </Link>
-                </li>
-                <li>
-                    <Link to="/shipments">
-                        Shipments
-                    </Link>
-                </li>
+                {listItems.map(listItem => (
+                    !listItem.visible ? null :                     
+                    <li key={listItem.url}>
+                        <NavLink activeClassName={styles.active} to={listItem.url}>
+                            {listItem.name}
+                        </NavLink>
+                    </li>
+                ))}
             </ul>
             <ul>
                 <li>
@@ -51,8 +54,9 @@ export default function Header() {
                         aria-haspopup="true"
                         onClick={handleMenu}
                         color="inherit"
+                        size='medium'
                     >
-                    <AccountCircle />
+                    <AccountCircle fontSize='large'/>
                     </IconButton>
                     <Menu
                         id="menu-appbar"
