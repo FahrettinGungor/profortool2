@@ -1,10 +1,13 @@
-import Header from '../../Components/Header/Header'
-import routes from '../../Routes';
+import Menu from '../../components/menu/menu'
+import routes from '../../routes';
+
+import styles from './home.module.scss'
 
 const Home = () => {
     return (
         <div>
-            <Header listItems={routes}></Header>
+            <div className={styles.menu}><Menu></Menu></div>
+            {/* <div className={styles.header}><Header listItems={routes} ></Header></div> */}
         </div>
     )
 }

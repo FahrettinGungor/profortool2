@@ -1,9 +1,11 @@
-import routes from './Routes'
+import routes from './routes'
+
+import './app.css'
 
 import {
     BrowserRouter as Switch,
     Route
-  } from "react-router-dom";
+} from "react-router-dom";
 
 const App = () => {
     return (

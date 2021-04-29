@@ -1,0 +1,12 @@
+.menu {
+    height: 100%;
+    width: 100%;
+    display: block;
+    border-right: 1px solid black;
+    padding: 0px !important;
+
+    .listItem {
+        border-bottom: 1px solid black;
+        height: 12.5%;
+    }
+}
