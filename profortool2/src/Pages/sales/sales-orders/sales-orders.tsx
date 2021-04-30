@@ -1,10 +1,8 @@
 import { Typography } from '@material-ui/core'
 
-import styles from './sales-orders.module.scss'
-
 const SalesOrders = () => {
     return (
-        <div className={styles.sales}>
+        <div>
             <Typography variant='h1'>Sales orders!</Typography>
         </div>
     )

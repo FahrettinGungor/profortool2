@@ -8,5 +8,15 @@
     .listItem {
         border-bottom: 1px solid black;
         height: 12.5%;
+        
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
     }
 }

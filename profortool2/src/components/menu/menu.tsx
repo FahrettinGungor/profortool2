@@ -3,11 +3,11 @@ import React from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import routes from '../../routes'
 import { useHistory } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
-/* Icons */
+import routes from '../../routes'
+import styles from './menu.module.scss'
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import SettingsIcon from '@material-ui/icons/Settings';
@@ -17,11 +17,8 @@ import LocalShippingIcon from '@material-ui/icons/LocalShipping';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import EuroIcon from '@material-ui/icons/Euro';
 
-/* Styles */
-import styles from './menu.module.scss'
-
 const Menu = () => {
-    const [selectedIndex, setSelectedKey] = React.useState("sales");
+    const [selectedIndex, setSelectedKey] = React.useState("");
 
     const history = useHistory();
 
@@ -44,8 +41,10 @@ const Menu = () => {
             selected={selectedIndex === "sales"}
             onClick={() => handleListItemClick("sales")}
           >
-            <ListItemIcon><TrendingUpIcon/></ListItemIcon>
-            <ListItemText primary="Sales" />
+            <NavLink className={selectedIndex === "sales" ? styles.active : ""} to='sales'>
+              <ListItemIcon><TrendingUpIcon/></ListItemIcon>
+              Sales
+            </NavLink>
           </ListItem>
 
           <ListItem className={styles.listItem} key="suppliers"
@@ -53,8 +52,10 @@ const Menu = () => {
             selected={selectedIndex === "suppliers"}
             onClick={() => handleListItemClick("suppliers")}
           >
-            <ListItemIcon><ShoppingCartIcon/></ListItemIcon>
-            <ListItemText primary="Suppliers" />
+            <NavLink className={selectedIndex === "suppliers" ? styles.active : ""} to='suppliers'>
+              <ListItemIcon><ShoppingCartIcon/></ListItemIcon>
+              Suppliers
+            </NavLink>
           </ListItem>
 
           <ListItem className={styles.listItem} key="production"
@@ -62,8 +63,10 @@ const Menu = () => {
             selected={selectedIndex === "production"}
             onClick={() => handleListItemClick("production")}
           >
-            <ListItemIcon><SettingsIcon/></ListItemIcon>
-            <ListItemText primary="Production" />
+            <NavLink className={selectedIndex === "production" ? styles.active : ""} to='production'>
+              <ListItemIcon><SettingsIcon/></ListItemIcon>
+              Production
+            </NavLink>
           </ListItem>
 
           <ListItem className={styles.listItem} key="returns"
@@ -71,8 +74,10 @@ const Menu = () => {
             selected={selectedIndex === "returns"}
             onClick={() => handleListItemClick("returns")}
           >
-            <ListItemIcon><KeyboardReturnIcon/></ListItemIcon>
-            <ListItemText primary="Returns" />
+            <NavLink className={selectedIndex === "returns" ? styles.active : ""} to='returns'>
+              <ListItemIcon><KeyboardReturnIcon/></ListItemIcon>
+              Returns
+            </NavLink>
           </ListItem>
 
           <ListItem className={styles.listItem} key="purchases"
@@ -80,8 +85,10 @@ const Menu = () => {
             selected={selectedIndex === "purchases"}
             onClick={() => handleListItemClick("purchases")}
           >
-            <ListItemIcon><LocalMallIcon/></ListItemIcon>
-            <ListItemText primary="Purchases" />
+            <NavLink className={selectedIndex === "purchases" ? styles.active : ""} to='purchases'>
+              <ListItemIcon><LocalMallIcon/></ListItemIcon>
+              Purchases
+            </NavLink>
           </ListItem>
 
           <ListItem className={styles.listItem} key="logistics"
@@ -89,8 +96,10 @@ const Menu = () => {
             selected={selectedIndex === "logistics"}
             onClick={() => handleListItemClick("logistics")}
           >
-            <ListItemIcon><LocalShippingIcon/></ListItemIcon>
-            <ListItemText primary="Logistics" />
+            <NavLink className={selectedIndex === "logistics" ? styles.active : ""} to='logistics'>
+              <ListItemIcon><LocalShippingIcon/></ListItemIcon>
+              Logistics
+            </NavLink>
           </ListItem>
 
           <ListItem className={styles.listItem} key="inventory"
@@ -98,8 +107,10 @@ const Menu = () => {
             selected={selectedIndex === "inventory"}
             onClick={() => handleListItemClick("inventory")}
           >
-            <ListItemIcon><AssignmentIcon/></ListItemIcon>
-            <ListItemText primary="Inventory" />
+            <NavLink className={selectedIndex === "inventory" ? styles.active : ""} to='inventory'>
+              <ListItemIcon><AssignmentIcon/></ListItemIcon>
+              Inventory
+            </NavLink>
           </ListItem>
 
           <ListItem className={styles.listItem} key="finance"
@@ -107,8 +118,10 @@ const Menu = () => {
             selected={selectedIndex === "finance"}
             onClick={() => handleListItemClick("finance")}
           >
-            <ListItemIcon><EuroIcon/></ListItemIcon>
-            <ListItemText primary="Finance" />
+            <NavLink className={selectedIndex === "finance" ? styles.active : ""} to='finance'>
+              <ListItemIcon><EuroIcon/></ListItemIcon>
+              Finance
+            </NavLink>
           </ListItem>
       </List>
     )

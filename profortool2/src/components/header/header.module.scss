@@ -1,0 +1,43 @@
+.toolbar {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    background: white;
+    padding-bottom: 1px
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    ul {
+        padding-left: 0px;
+        display: flex;
+        align-items: center;
+    }
+    
+    li {
+        display: inline;
+        margin-left: 1rem;
+    }
+    
+    a {
+        color: black;
+        font-size: 1.5rem;
+        text-decoration: none;
+    }
+    
+    img {
+        height: 3rem;
+        width: 3rem;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    .active {
+        text-decoration: underline;
+        font-weight: bold;
+    }
+}
